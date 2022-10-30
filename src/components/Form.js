@@ -7,7 +7,7 @@ export default function Form({expression , setExpression}) {
         console.log(expression)
         e.preventDefault()
         try {
-            await axios.post(`http://localhost:8000/evaluate`,
+            await axios.post(`https://frozen-savannah-67023.herokuapp.com/evaluate`,
             {
               expression : expression
             })
