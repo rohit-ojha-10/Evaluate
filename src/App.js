@@ -1,25 +1,24 @@
 import logo from './logo.svg';
-import './App.css';
-
+import Letters from './components/Letters';
+import Operators from './components/Operators';
+import './style.css'
+import Form from './components/Form';
+import { useState } from 'react';
 function App() {
+  const [expression,setExpression] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div >
+        <Letters expression={expression} setExpression = {setExpression} />
+      </div>
+      {/* <div>
+        <Operators />
+      </div> */}
+      <div>
+        <Form expression={expression} setExpression = {setExpression}/>
+      </div>
     </div>
   );
-}
-
+} 
+ 
 export default App;
